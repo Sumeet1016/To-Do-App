@@ -1,4 +1,5 @@
-const TableList=()=>{
+const TableList=({tasks,deleteTask})=>{
+
     return  (
         <table class="table table-striped">
   <thead>
@@ -10,24 +11,20 @@ const TableList=()=>{
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
+    {tasks.map((task,index)=>(
+    <tr key={task.id}>
+      <th scope="row">{index+1}</th>
+      <td>{task.text}</td>
+      <td>{task.date}</td>
+      <td>
+        <button type="button"
+         className="btn btn-danger"
+         onClick={()=>deleteTask(task.id)}>
+          Delete</button>
+
+      </td>
+</tr>
+))}
   </tbody>
   </table>
     )
