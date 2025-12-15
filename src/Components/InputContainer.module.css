@@ -1,0 +1,13 @@
+.inputContainer{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.inputContainer input{
+    width: 30%;
+    height: 35px;
+ 
+}
+.addBtn {
+width: 90px;
+}
